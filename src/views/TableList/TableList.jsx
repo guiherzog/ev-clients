@@ -1,7 +1,10 @@
 import React from "react";
 import { Grid } from "material-ui";
+import { connect } from 'react-redux';
 
 import { RegularCard, ClientTable, ItemGrid } from "components";
+
+import { getClients, editClient, removeClient } from '../../actions/actions';
 
 function TableList({ ...props }) {
   return (
@@ -15,15 +18,9 @@ function TableList({ ...props }) {
             <ClientTable
               tableHeaderColor="info"
               tableHead={["ID", "Name", "Email", "Phone", "Address"]}
-              tableData={[
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"],
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"],
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"],
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"],
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"],
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"],
-                ["1", "Guilherme Herzog", "guilhermeherzog@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355 Hamburg"]
-              ]}
+              tableData={[ ...props.clients ]}
+              removeItem={(id) => console.log('Removing client '+id)}
+              editItem={(id) => console.log('Editing client '+id)}
             />
           }
         />
@@ -32,4 +29,16 @@ function TableList({ ...props }) {
   );
 }
 
-export default TableList;
+const mapStateToProps = state => ({
+  clients: getClients().clients
+})
+
+const mapDispatchToProps = dispatch => ({
+  editClient: id => dispatch(editClient(id)),
+  removeClient: id => dispatch(removeClient(id))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TableList)

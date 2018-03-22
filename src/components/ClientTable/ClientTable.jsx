@@ -18,7 +18,8 @@ import tasksStyle from "variables/styles/tasksStyle.jsx";
 import tableStyle from "variables/styles/tableStyle";
 
 function CustomTable({ ...props }) {
-  const { classes, tableHead, tableData, tableHeaderColor } = props;
+  const { classes, tableHead, tableData, tableHeaderColor, removeItem, editItem } = props;
+  console.log(tableData)
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -63,6 +64,7 @@ function CustomTable({ ...props }) {
                     classes={{ tooltip: classes.tooltip }}
                   >
                     <IconButton
+                      onClick={() => editItem(prop[0])}
                       aria-label="Edit"
                       className={classes.tableActionButton}
                     >
@@ -80,6 +82,7 @@ function CustomTable({ ...props }) {
                     classes={{ tooltip: classes.tooltip }}
                   >
                     <IconButton
+                      onClick={() => removeItem(prop[0])}
                       aria-label="Close"
                       className={classes.tableActionButton}
                     >

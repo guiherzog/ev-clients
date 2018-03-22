@@ -1,5 +1,7 @@
 import React from "react";
 import { Grid } from "material-ui";
+import { connect } from 'react-redux';
+import { addClient } from '../../actions/actions';
 
 import {
   RegularCard,
@@ -8,7 +10,7 @@ import {
   ItemGrid
 } from "components";
 
-function UserProfile({ ...props }) {
+function UserProfile({ dispatch, ...props }) {
   return (
     <div>
       <Grid container>
@@ -97,5 +99,7 @@ function UserProfile({ ...props }) {
     </div>
   );
 }
+
+UserProfile = connect()(UserProfile);
 
 export default UserProfile;

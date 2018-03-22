@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ChartistGraph from "react-chartist";
+
+import { connect } from 'react-redux';
+import { getLastAddedClients, getTotalClients } from '../../actions/actions';
+
 import {
   Update,
   ArrowUpward,
@@ -43,10 +47,10 @@ class Dashboard extends React.Component {
               <StatsCard
                 icon={Accessibility}
                 iconColor="green"
-                title="Clients"
-                description="20+"
+                title="Total Clients"
+                description={this.props.totalClients+"+"}
                 statIcon={Update}
-                statText="Last Client Added: Guilherme Herzog"
+                statText={"Last Client Added: "+this.props.clients[0][1]}
               />
             </ItemGrid>
             <ItemGrid xs={12} sm={12} md={12}>
@@ -87,13 +91,8 @@ class Dashboard extends React.Component {
                 content={
                   <Table
                     tableHeaderColor="blue"
-                    tableHead={["ID", "Name", "Email", "Phone"]}
-                    tableData={[
-                      ["1", "Guilherme Herzog", "guihermeherzog@gmail.com", "+55 (21) 979 366 060"],
-                      ["2", "Marcelo Herzog", "marcelo.herzog@gmail.com", "+55 (21) 979 366 060"],
-                      ["3", "Viktoria Arndt", "viktoria.arndt@gmail.com", "+55 (21) 979 366 060"],
-                      ["4", "Andrea Frank", "andrea.frank@gmail.com", "+55 (21) 979 366 060"]
-                    ]}
+                    tableHead={["ID", "Name", "Email", "Phone", "Address"]}
+                    tableData={[ ...this.props.clients]}
                   />
                 }
               />
@@ -109,4 +108,13 @@ Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(Dashboard);
+const mapStateToProps = state => ({
+  clients: getLastAddedClients().clients,
+  totalClients: getTotalClients().totalClients
+})
+
+const connectedDashboard = connect(
+  mapStateToProps,
+)(Dashboard);
+
+export default withStyles(dashboardStyle)(connectedDashboard);
