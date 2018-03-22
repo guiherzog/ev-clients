@@ -1,0 +1,60 @@
+{
+	"clients": [
+		{ 
+			"id": 0, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 1, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 2, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 3, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 4, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 5, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 6, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		},
+		{ 
+			"id": 7, 
+			"name": "Guilherme Herzog", 
+			"email": "guihermeherzog@gmail.com", 
+			"phone": "+55 (21) 979 366 060", 
+			"address": "Stadthausbrücke 5, 20355, Hamburg"
+		}
+	]
+}

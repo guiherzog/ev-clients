@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "material-ui";
 import { connect } from 'react-redux';
-import { addClient } from '../../actions/actions';
+import { addClient, editClient } from '../../actions/actions';
 
 import {
   RegularCard,
@@ -92,7 +92,15 @@ function UserProfile({ dispatch, ...props }) {
                 </Grid>
               </div>
             }
-            footer={<Button color="success">Create Client</Button>}
+            footer={
+              <Button  
+                color="success"
+                onClick={() => 
+                  dispatch(addClient(["14", "Andrea Frank", "andrea.frank@gmail.com", "+55 (21) 979 366 060", "Stadthausbrücke 5, 20355, Hamburg"]))
+                }
+              >
+                Create Client
+              </Button>}
           />
         </ItemGrid>
       </Grid>

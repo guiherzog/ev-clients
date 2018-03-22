@@ -30,5 +30,6 @@ export function editClient(client) {
 }
 
 export function removeClient(id) {
+  console.log("Action Remove Client");
   return { type: REMOVE_CLIENT, id }
 }

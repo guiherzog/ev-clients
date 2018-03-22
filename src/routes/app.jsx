@@ -7,7 +7,6 @@ import {
   Dashboard,
   Person,
   ContentPaste,
-  LocationOn,
 } from "material-ui-icons";
 
 const appRoutes = [
