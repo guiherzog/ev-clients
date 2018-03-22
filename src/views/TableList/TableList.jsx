@@ -13,7 +13,6 @@ class TableList extends Component{
 
   render(){
     const props = this.props;
-    console.log(this.props);
     return (
       <Grid container>
         <ItemGrid xs={12} sm={12} md={12}>

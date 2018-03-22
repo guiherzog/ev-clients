@@ -19,7 +19,10 @@ import tableStyle from "variables/styles/tableStyle";
 
 function CustomTable({ ...props }) {
   const { classes, tableHead, tableData, tableHeaderColor, removeItem, editItem } = props;
-  console.log(tableData)
+  if (tableData == undefined){
+    const tableData = [];
+  }
+
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
